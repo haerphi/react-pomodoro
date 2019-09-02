@@ -5,7 +5,7 @@ let time = 25;
 let timeMinute = time;
 let timeSeconde = 0;
 let intervalID = null;
-const play = false;
+let play = false;
 
 function moreTime() {
     if (play) {
@@ -14,6 +14,7 @@ function moreTime() {
         time++;
         timeMinute = time;
     }
+    refresh();
 }
 
 function lessTime() {
@@ -27,26 +28,31 @@ function lessTime() {
         }
     } else {
         time--;
+        timeMinute = time;
     }
+    refresh();
 }
 
-function descrease() {
+function decrease() {
     timeSeconde--;
     if (timeSeconde < 0) {
         timeSeconde = 59;
         timeMinute--;
     }
     if (timeMinute < 0) {
+        console.log("FIN");
         clearInterval(intervalID);
         timeMinute = 0;
         timeSeconde = 0;
+        play = false;
     }
     refresh();
 }
 
 function startStopTimer() {
+    play = true;
     intervalID = setInterval(() => {
-        descrease();
+        decrease();
     }, 1000);
 }
 
@@ -54,6 +60,7 @@ function resetTimer() {
     if (intervalID != null) {
         timeSeconde = 0;
         timeMinute = time;
+        play = false;
         clearInterval(intervalID);
     }
 }
