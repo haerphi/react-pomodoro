@@ -4,8 +4,13 @@ import ReactDOM from "react-dom";
 //css file
 import "./index.css";
 //components
-import Bouton from "./componenent/boutons";
-import {Timer, moreTime, lessTime} from "./componenent/timer";
+import {
+    Timer,
+    moreTime,
+    lessTime,
+    startStopTimer,
+    resetTimer,
+} from "./componenent/timer";
 
 function refresh() {
     ReactDOM.render(<App />, document.querySelector("#root"));
@@ -16,22 +21,37 @@ const App = () => {
         moreTime();
         refresh();
     }
-    function moins() {
+    function minus() {
         lessTime();
+        refresh();
+    }
+
+    function reset() {
+        resetTimer();
+        refresh();
+    }
+    function startStop() {
+        startStopTimer();
         refresh();
     }
     return (
         <div>
             <Timer />
-            <Bouton name={"play"} />
+            <button type={"button"} onClick={startStop}>
+                {"Play"}
+            </button>
             <button type={"button"} onClick={plus}>
                 {"+"}
             </button>
-            <button type={"button"} onClick={moins}>
-                {"+"}
+            <button type={"button"} onClick={minus}>
+                {"-"}
             </button>
-            <Bouton name={"reset"} />
+            <button type={"button"} onClick={reset}>
+                {"reset"}
+            </button>
         </div>
     );
 };
 refresh();
+
+export default refresh;
