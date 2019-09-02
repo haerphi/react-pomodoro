@@ -56,18 +56,20 @@ const App = () => {
     return (
         <div>
             <Timer />
-            <button type={"button"} onClick={startStop}>
-                {playButtonValue}
-            </button>
-            <button type={"button"} onClick={plus}>
-                {"+"}
-            </button>
-            <button type={"button"} onClick={minus}>
-                {"-"}
-            </button>
-            <button type={"button"} onClick={reset}>
-                {"reset"}
-            </button>
+            <div className={"buttonsList"}>
+                <button type={"button"} onClick={startStop}>
+                    {playButtonValue}
+                </button>
+                <button type={"button"} onClick={plus}>
+                    {"+"}
+                </button>
+                <button type={"button"} onClick={minus}>
+                    {"-"}
+                </button>
+                <button type={"button"} onClick={reset}>
+                    {"reset"}
+                </button>
+            </div>
             <AlertShow />
         </div>
     );
