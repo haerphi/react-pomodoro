@@ -1,5 +1,6 @@
 import React from "react";
 import refresh from "../app";
+import {activeAlert} from "./alert-show";
 
 //default minute
 let time = 25;
@@ -52,6 +53,7 @@ function decrease() {
         timeMinute = 0;
         timeSeconde = 0;
         play = false;
+        activeAlert();
     }
     refresh();
 }
@@ -62,7 +64,7 @@ function startStopTimer() {
         play = true;
         intervalID = setInterval(() => {
             decrease();
-        }, 1000);
+        }, 200);
     } else {
         clearInterval(intervalID);
         play = false;
@@ -74,6 +76,7 @@ function resetTimer() {
     if (intervalID != null) {
         timeSeconde = 0;
         timeMinute = time;
+        activeAlert();
     }
 }
 
