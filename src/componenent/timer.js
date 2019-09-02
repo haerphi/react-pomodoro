@@ -84,7 +84,7 @@ function resetTimer() {
 function Timer() {
     const minute = `0${timeMinute}`.slice(-2);
     const seconde = `0${timeSeconde}`.slice(-2);
-    return <h1>{`${minute}:${seconde}`}</h1>;
+    return <h1 className={"timer"}>{`${minute}:${seconde}`}</h1>;
 }
 
 //exports all needed functions
