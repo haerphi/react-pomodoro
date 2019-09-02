@@ -2,3 +2,4 @@ node_modules
 dist
 .cache
 index.cs*
+.DS_Store
