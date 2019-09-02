@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import helloImg from "./img/hello.jpeg";
+//components
+import Bouton from "./componenent/boutons";
+import Timer from "./componenent/timer";
 
-const App = () => {
-    const hello = "Hello parcel world";
-    return (
-        <div>
-            <img src={helloImg} />
-            <h1>{hello}</h1>
-        </div>
-    );
-};
+const App = () => (
+    <div>
+        <Timer />
+        <Bouton name={"play"} />
+        <Bouton name={"+"} />
+        <Bouton name={"-"} />
+        <Bouton name={"reset"} />
+    </div>
+);
 
 ReactDOM.render(<App />, document.querySelector("#root"));
