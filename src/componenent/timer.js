@@ -1,7 +1,16 @@
 import React from "react";
 
-function timer() {
-    return <h1>{"00/00"}</h1>;
+let timeM = 0;
+
+function moreTime() {
+    timeM++;
+}
+function lessTime() {
+    timeM--;
 }
 
-export default timer;
+function Timer() {
+    return <h1>{`${timeM}:00`}</h1>;
+}
+
+export {Timer, moreTime, lessTime};

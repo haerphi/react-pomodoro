@@ -1,18 +1,37 @@
+//react imports
 import React from "react";
 import ReactDOM from "react-dom";
+//css file
 import "./index.css";
 //components
 import Bouton from "./componenent/boutons";
-import Timer from "./componenent/timer";
+import {Timer, moreTime, lessTime} from "./componenent/timer";
 
-const App = () => (
-    <div>
-        <Timer />
-        <Bouton name={"play"} />
-        <Bouton name={"+"} />
-        <Bouton name={"-"} />
-        <Bouton name={"reset"} />
-    </div>
-);
+function refresh() {
+    ReactDOM.render(<App />, document.querySelector("#root"));
+}
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const App = () => {
+    function plus() {
+        moreTime();
+        refresh();
+    }
+    function moins() {
+        lessTime();
+        refresh();
+    }
+    return (
+        <div>
+            <Timer />
+            <Bouton name={"play"} />
+            <button type={"button"} onClick={plus}>
+                {"+"}
+            </button>
+            <button type={"button"} onClick={moins}>
+                {"+"}
+            </button>
+            <Bouton name={"reset"} />
+        </div>
+    );
+};
+refresh();
