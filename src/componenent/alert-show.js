@@ -14,7 +14,7 @@ function activeAlert() {
 }
 
 function AlertShow() {
-    return <div> {contain} </div>;
+    return <div className={"alert"}> {contain} </div>;
 }
 
 export {AlertShow, activeAlert};

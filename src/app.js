@@ -54,21 +54,23 @@ const App = () => {
 
     //html structure
     return (
-        <div>
-            <Timer />
-            <div className={"buttonsList"}>
-                <button type={"button"} onClick={startStop}>
-                    {playButtonValue}
-                </button>
-                <button type={"button"} onClick={plus}>
-                    {"+"}
-                </button>
-                <button type={"button"} onClick={minus}>
-                    {"-"}
-                </button>
-                <button type={"button"} onClick={reset}>
-                    {"reset"}
-                </button>
+        <div className={"container"}>
+            <div className={"container-timer"}>
+                <Timer />
+                <div className={"buttonsList"}>
+                    <button type={"button"} onClick={startStop}>
+                        {playButtonValue}
+                    </button>
+                    <button type={"button"} onClick={plus}>
+                        {"+"}
+                    </button>
+                    <button type={"button"} onClick={minus}>
+                        {"-"}
+                    </button>
+                    <button type={"button"} onClick={reset}>
+                        {"reset"}
+                    </button>
+                </div>
             </div>
             <AlertShow />
         </div>

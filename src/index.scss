@@ -5,16 +5,42 @@ body {
     background-color: black;
     color: white;
     text-align: center;
-    margin-top: 25%;
+    margin-top: 10%;
 }
 
 #root {
-    .timer {
-        color: blue;
-    }
+    .container {
+        position: relative;
+        .container-timer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
 
-    .buttonsList {
-        margin-left: 30%;
-        margin-right: 30%;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            margin-left: 10%;
+            margin-right: 10%;
+
+            border: 0.2em solid grey;
+            border-radius: 3em;
+            .timer {
+                color: blue;
+                font-size: 7em;
+            }
+
+            .buttonsList {
+                display: flex;
+                flex-direction: column;
+                button {
+                    margin: 0.3em;
+                    height: 2em;
+                    width: 4em;
+                    font-size: 3em;
+                }
+            }
+        }
+        .alert {
+            position: absolute;
+        }
     }
 }
