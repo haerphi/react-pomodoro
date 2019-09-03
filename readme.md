@@ -7,4 +7,4 @@
 
 ## Todo
 
--   do a better alert...
+-   update modal
