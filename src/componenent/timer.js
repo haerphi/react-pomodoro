@@ -21,7 +21,6 @@ function moreTime() {
         time++;
         timeMinute = time;
     }
-    refresh();
 }
 
 //decrease of one to the default timer or to the actual timer
@@ -38,7 +37,6 @@ function lessTime() {
         time--;
         timeMinute = time;
     }
-    refresh();
 }
 
 //compte down
