@@ -11,7 +11,6 @@ import {
     startStopTimer,
     resetTimer,
 } from "./componenent/timer";
-import {AlertShow} from "./componenent/alert-show";
 
 //variables
 let playButtonValue = "Play";
@@ -72,7 +71,6 @@ const App = () => {
                     </button>
                 </div>
             </div>
-            <AlertShow />
         </div>
     );
 };
