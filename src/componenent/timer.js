@@ -80,7 +80,10 @@ function resetTimer() {
 
 //render of the timer
 function Timer() {
-    const minute = `0${timeMinute}`.slice(-2);
+    let minute = timeMinute;
+    if (timeMinute < 100) {
+        minute = `0${timeMinute}`.slice(-2);
+    }
     const seconde = `0${timeSeconde}`.slice(-2);
     return <h1 className={"timer"}>{`${minute}:${seconde}`}</h1>;
 }
